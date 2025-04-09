@@ -25,7 +25,7 @@
 
 6. Install packages:
     ```
-    npm i @fortawesome/fontawesome-free
+    npm i @fortawesome/fontawesome-free easy-peasy
     ```
 
 7. Delete: `public/vite.svg`, `src/assets`, `src/index.css`

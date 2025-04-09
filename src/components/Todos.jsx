@@ -1,28 +1,14 @@
 /* Display a list of todo items */
 import React from 'react'
+import { useStoreState } from 'easy-peasy' // for reading state reactively in components
 import TodoItem from './TodoItem'
 
 const Todos = () => {
 
-  /* Define hard-coded array of todos:
-      Each todo has id, title, and completed status. */
-  const todos = [
-    {
-      id: 1,
-      title: 'Take out trash',
-      completed: true
-    },
-    {
-      id: 2,
-      title: 'Pickup kids from school',
-      completed: false
-    },
-    {
-      id: 3,
-      title: 'Dinner with boss',
-      completed: false
-    }
-  ];
+  // Re-render component when global state updates
+  const todos = useStoreState(
+                    state => state.todos // Request todos array from global state
+                  )
 
   return (
     <>  
