@@ -39,5 +39,13 @@
 2. Open the extension on the browser: Press **F12** and select **Redux**
 3. Select `State` > `Tree` > to see as expandable `todos` 
 
+### Toggle Action
+1. Click on a Todo `<span>`
+2. Click on triggered action `@action.toggle`
+3. Select `Diff` > `Tree` > to see as expandable `todos` 
+4. Expand the item inside `todos` item to see:
+    - `completed(pin): true => false` or
+    - `completed(pin): false => true`
+
 
 
