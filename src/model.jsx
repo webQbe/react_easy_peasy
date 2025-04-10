@@ -1,26 +1,25 @@
 /* Easy Peasy model */
-import { action } from "easy-peasy"
+import { action, thunk } from "easy-peasy"
 import { v4 as uuidv4 } from 'uuid'
 
 // Defines the initial state with a todos array
 export default {
-    todos: [
-        {
-            id: 1,
-            title: 'Take out trash',
-            completed: true
-        },
-        {
-            id: 2,
-            title: 'Pickup kids from school',
-            completed: false
-        },
-        {
-            id: 3,
-            title: 'Dinner with boss',
-            completed: false
-        }
-    ],
+    todos: [],
+    
+    /* Thunks */
+    // Thunk to fetch todos from API
+    fetchTodos: thunk(async actions => {
+        const res = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+        const todos = await res.json()
+        actions.setTodos(todos)
+    }),
+
+    /* Actions */
+    // Set fetched todos
+    setTodos: action((state, todos) => {
+        state.todos = todos
+    }),
+
     // Define add action that accepts a todo object
     add: action((state, todo) => {
         // Generate unique ID with uuid.v4() & assign it to todo.id
