@@ -1,6 +1,6 @@
 /* Easy Peasy model */
-
 import { action } from "easy-peasy"
+import { v4 as uuidv4 } from 'uuid'
 
 // Defines the initial state with a todos array
 export default {
@@ -21,6 +21,13 @@ export default {
             completed: false
         }
     ],
+    // Define add action that accepts a todo object
+    add: action((state, todo) => {
+        // Generate unique ID with uuid.v4() & assign it to todo.id
+        todo.id = uuidv4()
+        // Add the new todo (without modifying original array directly)
+        state.todos = [...state.todos, todo]
+    }),
     // Define toggle action
     toggle: action((state, id) => {
                 // Find the matching todo

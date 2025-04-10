@@ -1,4 +1,5 @@
 /* Form to add new todos */
+import { useStoreActions } from 'easy-peasy'
 import React, { useState } from 'react'
 
 const AddTodo = () => {
@@ -6,9 +7,21 @@ const AddTodo = () => {
     // Manage form input state
     const [title, setTitle] = useState('')
 
+    // Pull add action
+    const add = useStoreActions(actions => actions.add)
+
   return (
     <div>
-        <form>
+        <form
+          onSubmit={e => {
+            e.preventDefault() // Prevent page reload
+            // Call add action to generate a unique ID & add new todo to global state
+            add({
+              title,
+              completed: false
+            })
+          }}
+        >
             {/* Render input field to type todo title */}
             <input 
                 type="text" 
