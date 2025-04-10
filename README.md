@@ -47,5 +47,11 @@
     - `completed(pin): true => false` or
     - `completed(pin): false => true`
 
+### Remove Action
+1. Click on a Todo delete (trash can) icon
+2. Click on triggered action `@action.remove`
+3. Select `Diff` > `Tree` > to see as expandable `todos` 
+4. Expand `todos` to see the deleted item
+
 
 

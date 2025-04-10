@@ -21,7 +21,7 @@ export default {
             completed: false
         }
     ],
-    // Define Easy Peasy action
+    // Define toggle action
     toggle: action((state, id) => {
                 // Find the matching todo
                 const todo = state.todos.find(todo => todo.id === id)
@@ -30,5 +30,14 @@ export default {
                     todo.completed = !todo.completed 
                     /* Mutation allowed thanks to Immer.js  */
                 }
+            }),
+    // Define remove action
+    remove: action((state, id) => { // Take current state & id
+        
+                // Replace state.todos with the new filtered array
+                state.todos = state.todos 
+                                .filter(todo => todo.id !== id) // filter out the todo with the matching id
+
+                /* Easy Peasy uses Immer, you can reassign state.todos like this directly inside an action. */
             })
 }

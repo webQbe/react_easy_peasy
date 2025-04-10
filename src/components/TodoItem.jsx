@@ -1,11 +1,14 @@
 /* Display a single todo item */
 import React from 'react'
-import { useStoreActions } from 'easy-peasy' // To re-render the list automatically to reflect changes
+import { useStoreActions } from 'easy-peasy' // auto-rerenders with the updated list
 
 const TodoItem = ({ todo }) => { // Receive todo object as a prop
 
-  // Pull toggle action from the store
-  const toggle = useStoreActions(actions => actions.toggle)
+  // Destructure both toggle and remove
+  const { toggle, remove } = useStoreActions(actions => ({
+    toggle: actions.toggle,
+    remove: actions.remove
+  }))
 
   return (
     <div className="todo" 
@@ -16,15 +19,20 @@ const TodoItem = ({ todo }) => { // Receive todo object as a prop
                             
         {/* Display title */}
         <span 
-          onClick={() => toggle(todo.id)} // Trigger toggle action to update the state centrally 
+          // Trigger toggle action to update the state centrally 
+          onClick={() => toggle(todo.id)} 
           style={{ cursor: 'pointer' }}
         >
           { todo.title }
         </span>
         
         {/* Display delete button */}
-        <button>
-            <i className="fas fa-trash-alt" />
+        <button
+          // Call remove action to remove this todo from the global todos array
+          onClick={() => remove(todo.id)}>
+
+            <i className="fas fa-trash-alt" /> {/* trash icon */}
+
         </button>
 
     </div>
