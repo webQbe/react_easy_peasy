@@ -28,9 +28,16 @@
     npm i @fortawesome/fontawesome-free easy-peasy
     ```
 
-7. Delete: `public/vite.svg`, `src/assets`, `src/index.css`
-8. Modify `src/App.jsx` and `src/main.jsx`
-9. Run frontend server with: `npm run dev`
+7. Install **Redux Dev Tools** browser extension
+8. Delete: `public/vite.svg`, `src/assets`, `src/index.css`
+9. Modify `src/App.jsx` and `src/main.jsx`
+10. Run frontend server with: `npm run dev`
+
+
+## Inspecting with Redux Dev Tools browser extension
+1. Open the app
+2. Open the extension on the browser: Press **F12** and select **Redux**
+3. Select `State` > `Tree` > to see as expandable `todos` 
 
 
 
