@@ -1,7 +1,10 @@
 # React Easy Peasy State Management
-- Easy Peasy is a **Wrapper for Redux**
-- With Easy Peasy You don't have to use all the Redux code
-
+- Easy Peasy is a **Wrapper for Redux**.
+- **Simplified syntax:** Actions, state, and effects are all declared in one object — no need to set up reducers manually.
+- **Built-in Immer:** You can mutate state directly (e.g. `state.todos.push(...)`), but it still stays immutable under the hood.
+- **Less boilerplate:**	No `combineReducers`, `switch` statements, or action type constants. Just clean functions.
+- **Async is easy:** `thunk` support is built-in and easy to use.
+- **Great for small to medium apps:** Quick setup, clear logic, great for teams that want productivity.
 
 ## Getting Started
 
@@ -65,3 +68,11 @@ After fetching data from API, check for following actions:
 - `@thunk.fetchTodos(success)`   
 
 
+## When to choose Easy Peasy
+- Quick **prototypes** or **solo projects**
+- Team of beginners or juniors
+
+## When to choose pure Redux
+- **Learning Redux fundamentals:** Start with pure Redux to understand the core ideas.
+- **Complex or enterprise-scale apps:** Stick with Redux for flexibility, tooling, and ecosystem.
+- Need to use **Redux DevTools**, **custom middleware**, etc.
