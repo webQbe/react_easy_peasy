@@ -1,4 +1,7 @@
 # React Easy Peasy State Management
+This repo is an adaptation of [Easy Peasy React State Management](https://www.youtube.com/watch?v=cSUt8b2qapM&list=PLillGF-RfqbY3c2r0htQyVbDJJoBFE6Rb&index=15&pp=iAQB) by Brad Traversy. 
+
+I followed the tutorial to learn followings:
 - Easy Peasy is a **Wrapper for Redux**.
 - **Simplified syntax:** Actions, state, and effects are all declared in one object — no need to set up reducers manually.
 - **Built-in Immer:** You can mutate state directly (e.g. `state.todos.push(...)`), but it still stays immutable under the hood.
@@ -76,3 +79,10 @@ After fetching data from API, check for following actions:
 - **Learning Redux fundamentals:** Start with pure Redux to understand the core ideas.
 - **Complex or enterprise-scale apps:** Stick with Redux for flexibility, tooling, and ecosystem.
 - Need to use **Redux DevTools**, **custom middleware**, etc.
+
+
+## Credits
+Original tutorial: [Easy Peasy React State Management](https://www.youtube.com/watch?v=cSUt8b2qapM&list=PLillGF-RfqbY3c2r0htQyVbDJJoBFE6Rb&index=15&pp=iAQB) — Brad Traversy.
+
+## License
+MIT License
